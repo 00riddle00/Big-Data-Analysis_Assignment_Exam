@@ -132,7 +132,7 @@ The `AIS` `CSV` files contain `26 columns`:
 
 | #  | Columns in `*.csv` file        | Format                                                                                                       |
 | -- | ------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| 1  | Timestamp                      | Timestamp from the AIS basestation, format: `31/12/2015 23:59:59`                                            |
+| 1  | Timestamp                      | Timestamp from the AIS basestation, format: `31/12/2021 23:59:59`                                            |
 | 2  | Type of mobile                 | Describes what type of target this message is received from (class A AIS Vessel, Class B AIS vessel, etc)    |
 | 3  | MMSI                           | MMSI number of vessel                                                                                        |
 | 4  | Latitude                       | Latitude of message report (e.g. `57,8794`)                                                                  |
@@ -162,3 +162,74 @@ The `AIS` `CSV` files contain `26 columns`:
 ---
 
 # Part II — Implementation
+
+## Development
+
+Prerequisites:
+
+- Docker + Docker Compose
+- [uv](https://docs.astral.sh/uv/) for Python dependency management
+
+Install dependencies:
+
+```bash
+uv sync
+```
+
+Lint and auto-fix:
+
+```bash
+uv run ruff check --fix .
+```
+
+Sort and format imports:
+
+```bash
+uv run ruff check --select I --fix .
+```
+
+Format code:
+
+```bash
+uv run ruff format .
+```
+
+Apply Black string processing normalization:
+
+```bash
+uv run black .
+```
+
+or using full flags:
+
+```bash
+uv run black --line-length=88 --preview --enable-unstable-feature=string_processing .
+```
+
+## Running
+
+TODO
+
+## Makefile Targets
+
+TODO
+
+## System Specifications
+
+**Hardware:**
+
+| Component | Specification                                                |
+| --------- | ------------------------------------------------------------ |
+| Model     | Lenovo IdeaCentre Gaming 5 14ACN6 (AMD)                      |
+| CPU       | AMD Ryzen 7 5700G, 8 Cores/16 Threads, 3.8 GHz (max 4.6 GHz) |
+| RAM       | 32 GB DDR4 3200 MHz (dual-channel)                           |
+| Storage   | Samsung PM981a 1 TB NVMe SSD (PCIe 3.0 x4)                   |
+| GPU       | NVIDIA GeForce RTX 3060 12 GB                                |
+
+**Software:**
+
+TODO
+
+## Results
+
+TODO
