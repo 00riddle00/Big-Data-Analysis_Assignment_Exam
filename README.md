@@ -217,7 +217,21 @@ TODO
 
 ## Makefile Targets
 
-TODO
+| Target           | Description                                      |
+| ---------------- | ------------------------------------------------ |
+| `make help`      | Show all available targets                       |
+| `make all`       | Run full pipeline                                |
+| `make deps`      | Install Python dependencies via uv (incremental) |
+| `make data`      | Show instructions for downloading AIS data       |
+| `make lint`      | Lint and format Python code (ruff + black)       |
+| `make build`     | Build Docker image                               |
+| `make run`       | Run the container                                |
+| `make stop`      | Stop the container                               |
+| `make rmi`       | Stop container and remove Docker image           |
+| `make test`      | Run unit tests                                   |
+| `make clean`     | Remove generated output files                    |
+| `make clean-env` | Remove Python virtual environment                |
+| `make distclean` | clean + clean-env + rmi                          |
 
 ## System Specifications
 
