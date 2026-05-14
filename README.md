@@ -26,6 +26,11 @@
   - [Evaluation Criteria](#evaluation-criteria)
   - [Additional — Dataset Schema](#additional--dataset-schema)
 - [Part II — Implementation](#part-ii--implementation)
+  - [Development](#development)
+  - [Running](#running)
+  - [Makefile Targets](#makefile-targets)
+  - [System Specifications](#system-specifications)
+  - [Results](#results-1)
 <!--toc:end-->
 
 # Part I — Assignment Specification
@@ -228,7 +233,13 @@ TODO
 
 **Software:**
 
-TODO
+| Component | Version            |
+| --------- | ------------------ |
+| OS        | Arch Linux         |
+| Kernel    | 7.0.5 (Arch Linux) |
+| Docker    | 29.4.3             |
+| Python    | TODO               |
+| PySpark   | TODO               |
 
 ## Results
 
