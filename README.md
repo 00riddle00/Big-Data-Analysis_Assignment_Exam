@@ -226,6 +226,13 @@ Run `make data` for download instructions.
 make build
 ```
 
+The compiled Docker image is available on Docker Hub:
+https://hub.docker.com/repository/docker/tomasososdev/ais-collision-detection
+
+```bash
+docker pull tomasososdev/ais-collision-detection:latest
+```
+
 **3. Run the pipeline:**
 
 ```bash
