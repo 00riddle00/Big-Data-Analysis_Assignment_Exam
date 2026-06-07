@@ -1,0 +1,16 @@
+# vim: set ft=yaml tw=88 nu ai et ts=2 sw=2:
+
+services:
+  ais-collision:
+    build: .
+    image: ais-collision-detection:latest
+    container_name: ais-collision
+    environment:
+      AIS_DATA_GLOB: "data_arch/aisdk-2021-12/*.csv"
+      AIS_OUTPUT_DIR: "outputs"
+      SPARK_DRIVER_MEMORY: "8g"
+    volumes:
+      # AIS CSV files — mount read-only, data never modified by the pipeline.
+      - ./data_arch:/app/data_arch:ro
+      # Results (results.txt + trajectory_map.html) appear here on the host.
+      - ./outputs:/app/outputs:rw
