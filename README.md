@@ -213,7 +213,30 @@ uv run black --line-length=88 --preview --enable-unstable-feature=string_process
 
 ## Running
 
-TODO
+**1. Place the dataset:**
+
+Download the December 2021 AIS data and place the CSV files at:
+`data_arch/aisdk-2021-12/`
+
+Run `make data` for download instructions.
+
+**2. Build the Docker image:**
+
+```bash
+make build
+```
+
+**3. Run the pipeline:**
+
+```bash
+make run
+```
+
+Results are written to `outputs/`:
+
+- `results.txt` — MMSI numbers, vessel names, timestamp, coordinates, and top-5 events
+  by danger score
+- `trajectory_map.html` — interactive Folium trajectory map (±10 min around collision)
 
 ## Makefile Targets
 
@@ -247,14 +270,22 @@ TODO
 
 **Software:**
 
-| Component | Version            |
-| --------- | ------------------ |
-| OS        | Arch Linux         |
-| Kernel    | 7.0.5 (Arch Linux) |
-| Docker    | 29.4.3             |
-| Python    | TODO               |
-| PySpark   | TODO               |
+| Component | Version                           |
+| --------- | --------------------------------- |
+| OS        | Arch Linux                        |
+| Kernel    | 7.0.5 (Arch Linux)                |
+| Docker    | 29.4.3                            |
+| Python    | 3.13.x (inside container)         |
+| PySpark   | 4.1.1 (inside container)          |
 
 ## Results
 
-TODO
+| Field            | Value                            |
+| ---------------- | -------------------------------- |
+| Vessel A         | KARIN HOEJ (MMSI 219021240)      |
+| Vessel B         | MV SCOT CARRIER (MMSI 232018267) |
+| Timestamp        | 2021-12-13 02:27:29 UTC          |
+| Latitude         | 55.223079                        |
+| Longitude        | 14.243707                        |
+| Closest approach | 4.1 m                            |
+| Danger score     | 205                              |
