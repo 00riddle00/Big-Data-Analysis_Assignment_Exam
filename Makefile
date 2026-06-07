@@ -46,8 +46,7 @@ help:
 
 # -----------------------------------------------------------------------------
 
-all:
-	@echo "==> TODO: run full pipeline"
+all: build run
 
 # -----------------------------------------------------------------------------
 
@@ -92,16 +91,25 @@ lint:
 # -----------------------------------------------------------------------------
 
 build:
-	@echo "==> TODO: build Docker image"
+	@echo "==> Building Docker image"
+	docker build -t $(IMAGE_NAME) .
 
 run:
-	@echo "==> TODO: run container"
+	@echo "==> Running collision detection pipeline"
+	docker run --rm \
+		--name $(CONTAINER_NAME) \
+		-e SPARK_DRIVER_MEMORY=8g \
+		-v $(PWD)/data_arch:/app/data_arch:ro \
+		-v $(PWD)/outputs:/app/outputs:rw \
+		$(IMAGE_NAME)
 
 stop:
-	@echo "==> TODO: stop container"
+	@echo "==> Stopping container"
+	docker stop $(CONTAINER_NAME) || true
 
 rmi: stop
-	@echo "==> TODO: remove Docker image"
+	@echo "==> Removing Docker image"
+	docker rmi $(IMAGE_NAME) || true
 
 # -----------------------------------------------------------------------------
 
