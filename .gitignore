@@ -214,3 +214,4 @@ __marimo__/
 data_arch/*.csv
 data_arch/*.zip
 data_arch/*.gz
+data_arch/aisdk-2021-12/*.csv
