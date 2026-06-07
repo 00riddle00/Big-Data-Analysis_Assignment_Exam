@@ -1,13 +1,33 @@
 [project]
 name = "big-data-exam"
 version = "0.1.0"
+description = "PySpark-based AIS vessel collision detection pipeline for the Baltic Sea, December 2021."
 requires-python = ">=3.13.13"
+readme = "README.md"
 dependencies = [
     "black>=26.3.1",
     "folium>=0.20.0",
-    "h3>=4.4.2",
     "pandas>=3.0.3",
     "pyarrow>=24.0.0",
     "pyspark>=4.1.1",
     "ruff>=0.15.13",
 ]
+
+[dependency-groups]
+dev = [
+    "black>=26.3.1",
+    "ruff>=0.15.13",
+]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.format]
+quote-style = "double"
+docstring-code-format = true
+
+[tool.black]
+line-length = 88
+preview = true
+enable-unstable-feature = ["string_processing"]
+target-version = ["py313"]
